@@ -15,7 +15,7 @@ Podremos logearnos como Grupo de estudio o Docente,
 ![image](https://user-images.githubusercontent.com/95547617/229030411-337f556c-e7aa-498e-a1f5-05729273fc9f.png)
 
 Una vez logueados como Docente, podremos ver en el menú múltiples opciones como:
-  - Inicio: Ab´ra contador de Eventos, Aulas, Materias y Docentes
+  - Inicio: Abrá contador de Eventos, Aulas, Materias y Docentes
   - Aulas: Formulario para añadir una nueva aula
   - Grupos: Fomrulario para Crear Grupos
   - Eventos: Formulario para iniciar un Evento
