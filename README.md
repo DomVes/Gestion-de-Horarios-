@@ -5,6 +5,8 @@ Trabajo universitario sobre la gestion de horarios de un Grupo e Inscripción a 
      POR: 
         - Juan Esteban Castaño Castaño
         - Cristian Camilo Gomez Lopez
+        
+     Instituto Tecnológico Metropolitano ITM, Medellín, Antioquia - Colombia
 
 Aqui se presenta el Modelo relacional de la Base de datos propuesto:
 
