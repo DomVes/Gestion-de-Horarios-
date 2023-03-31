@@ -1,6 +1,9 @@
 # Gestion de Horarios
 
 Trabajo universitario sobre la gestion de horarios de un Grupo e Inscripción a Eventos
+    - POR: 
+        * Juan Esteban Castaño Castaño
+        * Cristian Camilo Gomez Lopez
 
 Aqui se presenta el Modelo relacional de la Base de datos propuesto:
 
