@@ -1,62 +1,68 @@
 <?php
-    class Materia extends Conectar{
+    class Aula extends Conectar{
 
         /* TODO: Obtener todos los registros */
-        public function get_materia(){
+        public function get_aula(){
             $conectar= parent::conexion();
             parent::set_names();
-            $sql="SELECT * FROM tm_materia WHERE est=1;";
+            $sql="SELECT * FROM aulas";
             $sql=$conectar->prepare($sql);
             $sql->execute();
             return $resultado=$sql->fetchAll();
         }
 
         /* TODO:Insert Registro*/
-        public function insert_materia($cat_nom){
+        public function insert_aula($bloque,$numero,$descripcion){
             $conectar= parent::conexion();
             parent::set_names();
-            $sql="INSERT INTO tm_materia (cat_id, cat_nom, est) VALUES (NULL,?,'1');";
+            $sql="INSERT INTO aulas (ID_aula, numero_de_aula, bloque, descripcion) VALUES (NULL,?,?,?);";
             $sql=$conectar->prepare($sql);
-            $sql->bindValue(1, $cat_nom);
+            $sql->bindValue(1, $bloque);
+            $sql->bindValue(2, $numero);
+            $sql->bindValue(3, $descripcion);
             $sql->execute();
             return $resultado=$sql->fetchAll();
         }
 
         /* TODO:Update Registro*/
-        public function update_materia($cat_id,$cat_nom){
+        public function update_aula($ID_aula,$bloque,$numero,$descripcion){
             $conectar= parent::conexion();
             parent::set_names();
-            $sql="UPDATE tm_materia set
-                cat_nom = ?
+            $sql="UPDATE aulas set
+                numero_de_aula = ?,
+                bloque = ?,
+                descripcion = ?
                 WHERE
-                cat_id = ?";
+                ID_aula = ?";
             $sql=$conectar->prepare($sql);
-            $sql->bindValue(1, $cat_nom);
-            $sql->bindValue(2, $cat_id);
+            $sql->bindValue(1, $bloque);
+            $sql->bindValue(2, $numero);
+            $sql->bindValue(3, $descripcion);
+            $sql->bindValue(4, $ID_aula);
             $sql->execute();
             return $resultado=$sql->fetchAll();
         }
 
         /* TODO:Delete Registro*/
-        public function delete_materia($ID_materia){
+        public function delete_aula($ID_aula){
             $conectar= parent::conexion();
             parent::set_names();
-            $sql="DELETE FROM materias
+            $sql="DELETE FROM aulas
                 WHERE 
-                ID_materia = ?";
+                ID_aula = ?";
             $sql=$conectar->prepare($sql);
-            $sql->bindValue(1, $ID_materia);
+            $sql->bindValue(1, $ID_aula);
             $sql->execute();
             return $resultado=$sql->fetchAll();
         }
 
         /* TODO:Registro x id */
-        public function get_materia_x_id($ID_materia){
+        public function get_aula_x_id($ID_aula){
             $conectar= parent::conexion();
             parent::set_names();
-            $sql="SELECT * FROM materias WHERE ID_materia = ?";
+            $sql="SELECT * FROM aulas WHERE ID_aula = ?";
             $sql=$conectar->prepare($sql);
-            $sql->bindValue(1, $ID_materia);
+            $sql->bindValue(1, $ID_aula);
             $sql->execute();
             return $resultado=$sql->fetchAll();
         }

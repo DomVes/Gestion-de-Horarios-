@@ -9,23 +9,20 @@
             </div>
             <form method="post" id="usuario_form">
                 <div class="modal-body">
-                    <input type="hidden" id="cat_id" name="cat_id">
+                    <input type="hidden" id="ID_materia" name="ID_materia">
                     <div class="form-group">
-                        <label class="form-label" for="cat_nom">Codigo</label>
-                        <input type="text" class="form-control" id="cat_nom" name="cat_nom" placeholder="Ingrese Nombre" required>
+                        <label class="form-label" for="id_grupo">Codigo del grupo</label>
+                        <select type="select2" class="form-control" id="id_grupo" name="id_grupo" placeholder="Seleccionar" required></select>
                     </div> 
                     <div class="form-group">
-                        <label class="form-label" for="cat_nom">Nombre</label>
-                        <input type="text" class="form-control" id="cat_nom" name="cat_nom" placeholder="Ingrese Nombre" required>
+                        <label class="form-label" for="nombre">Nombre</label>
+                        <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Ingrese Nombre" required>
                     </div>                     
                     <div class="form-group">
-                        <label class="form-label" for="cat_nom">Docente</label>
-                        <input type="text" class="form-control" id="cat_nom" name="cat_nom" placeholder="Ingrese Nombre" required>
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label" for="cat_nom">Duración en Horas</label>
-                        <input type="text" class="form-control" id="cat_nom" name="cat_nom" placeholder="Ingrese Nombre" required>
-                    </div>                                                        
+                        <label class="form-label" for="docente_id">Docente</label>
+                        <select type="select2" class="form-control" id="docente_id" placeholder="Seleccionar" name="docente_id"required>
+                        </select>
+                    </div>                                                                            
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-rounded btn-default" data-dismiss="modal">Cerrar</button>

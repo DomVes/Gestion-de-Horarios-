@@ -37,9 +37,9 @@
 				<table id="usuario_data" class="table table-bordered table-striped table-vcenter js-dataTable-full">
 					<thead>
 						<tr>
-							<th style="width: 10%;">Bloque</th>
-							<th style="width: 10%;">Número</th>
-							<th style="width: 10%;">Descripción</th>
+							<th style="width: 10%;">Codigo</th>
+							<th style="width: 10%;">Número de Grupo</th>
+							<th style="width: 10%;">Cantidad de Estudiantes</th>
 							<th class="text-center" style="width: 5%;">Editar</th>
 							<th class="text-center" style="width: 5%;">Eliminar</th>
 						</tr>

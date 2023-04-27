@@ -12,7 +12,7 @@
                 //TODO: Cadenad e Conexion Produccion
                 //$conectar = $this->dbh = new PDO("mysql:host=localhost;dbname=andercode_helpdesk1","andercode","contraseña");
 				return $conectar;
-			} catch (Exception $e) {
+			}catch (Exception $e) {
 				print "¡Error BD!: " . $e->getMessage() . "<br/>";
 				die();
 			}

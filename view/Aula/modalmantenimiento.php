@@ -9,19 +9,19 @@
             </div>
             <form method="post" id="usuario_form">
                 <div class="modal-body">
-                    <input type="hidden" id="cat_id" name="cat_id">
+                    <input type="hidden" id="ID_aula" name="ID_aula">
 
                     <div class="form-group">
-                        <label class="form-label" for="cat_nom">Bloque</label>
-                        <input type="text" class="form-control" id="cat_nom" name="cat_nom" placeholder="Ingrese Nombre" required>
+                        <label class="form-label" for="bloque">Bloque</label>
+                        <input type="text" class="form-control" id="bloque" name="bloque" placeholder="Ingrese Bloque" required>
                     </div>
                     <div class="form-group">
-                        <label class="form-label" for="cat_nom">Número</label>
-                        <input type="text" class="form-control" id="cat_nom" name="cat_nom" placeholder="Ingrese Nombre" required>
+                        <label class="form-label" for="numero_de_aula">Número</label>
+                        <input type="number" class="form-control" id="numero_de_aula" name="numero_de_aula" placeholder="Ingrese Numero de Aula" required>
                     </div>
                     <div class="form-group">
-                        <label class="form-label" for="cat_nom">Descripción</label>
-                        <input type="text" class="form-control" id="cat_nom" name="cat_nom" placeholder="Ingrese Nombre" required>
+                        <label class="form-label" for="descripcion">Descripción</label>
+                        <input type="text" class="form-control" id="descripcion" name="descripcion" placeholder="Ingrese Descripcion de Aula" required>
                     </div>                    
                 </div>
                 <div class="modal-footer">

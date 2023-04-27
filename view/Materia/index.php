@@ -37,7 +37,7 @@
 				<table id="usuario_data" class="table table-bordered table-striped table-vcenter js-dataTable-full">
 					<thead>
 						<tr>
-							<th style="width: 10%;">Nombre</th>
+							<th style="width: 10%;">Grupo</th>
 							<th style="width: 10%;">Docente</th>
 							<th style="width: 10%;">Aula</th>
 							<th class="text-center" style="width: 5%;">Editar</th>

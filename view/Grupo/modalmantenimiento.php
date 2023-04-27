@@ -9,19 +9,19 @@
             </div>
             <form method="post" id="usuario_form">
                 <div class="modal-body">
-                    <input type="hidden" id="cat_id" name="cat_id">
+                    <input type="hidden" id="ID_grupo" name="ID_grupo">
 
                     <div class="form-group">
-                        <label class="form-label" for="cat_nom">Código</label>
-                        <input type="text" class="form-control" id="cat_nom" name="cat_nom" placeholder="Ingrese Nombre" required>
+                        <label class="form-label" for="codigo">Código</label>
+                        <input type="text" class="form-control" id="codigo" name="codigo" placeholder="Ingrese Codigo de grupo" required>
                     </div>
                     <div class="form-group">
-                        <label class="form-label" for="cat_nom">Número de grupo</label>
-                        <input type="text" class="form-control" id="cat_nom" name="cat_nom" placeholder="Ingrese Nombre" required>
+                        <label class="form-label" for="numero_de_grupo">Número de grupo</label>
+                        <input type="text" class="form-control" id="numero_de_grupo" name="numero_de_grupo" placeholder="Ingrese Número de Grupo" required>
                     </div>
                     <div class="form-group">
-                        <label class="form-label" for="cat_nom">Cantidad de estudiantes</label>
-                        <input type="text" class="form-control" id="cat_nom" name="cat_nom" placeholder="Ingrese Nombre" required>
+                        <label class="form-label" for="cantidad_de_estudiantes">Cantidad de estudiantes</label>
+                        <input type="number" class="form-control" id="cantidad_de_estudiantes" name="cantidad_de_estudiantes" placeholder="Ingrese Cantidad de Estudiantes" required>
                     </div>                    
                 </div>
                 <div class="modal-footer">
