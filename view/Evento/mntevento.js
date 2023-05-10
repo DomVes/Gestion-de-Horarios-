@@ -11,7 +11,7 @@ function guardaryeditar(e){
     e.preventDefault();
 	var formData = new FormData($("#usuario_form")[0]);
     $.ajax({
-        url: "../../controller/categoria.php?op=guardaryeditar",
+        url: "../../controller/evento.php?op=guardaryeditar",
         type: "POST",
         data: formData,
         contentType: false,
@@ -46,7 +46,7 @@ $(document).ready(function(){
         buttons: [	          
                 ],
         "ajax":{
-            url: '../../controller/categoria.php?op=listar',
+            url: '../../controller/evento.php?op=listar',
             type : "post",
             dataType : "json",						
             error: function(e){
@@ -86,14 +86,17 @@ $(document).ready(function(){
 });
 
 /* TODO: Mostrar informacion segun ID en los inputs */
-function editar(ID_materia){
+function editar(ID_evento){
     $('#mdltitulo').html('Editar Registro');
 
     /* TODO: Mostrar Informacion en los inputs */
-    $.post("../../controller/categoria.php?op=mostrar", {ID_materia : ID_materia}, function (data) {
+    $.post("../../controller/evento.php?op=mostrar", {ID_evento : ID_evento}, function (data) {
         data = JSON.parse(data);
-        $('#ID_materia').val(data.ID_materia);
-        $('#nombre').val(data.nombre);
+        $('#ID_evento').val(data.ID_evento);
+        $('#codigo').val(data.codigo);
+        $('#fecha').val(data.fecha);
+        $('#duracion').val(data.duracion);
+        $('#objetivo').val(data.objetivo);
     }); 
 
     /* TODO: Mostrar Modal */
@@ -101,7 +104,7 @@ function editar(ID_materia){
 }
 
 /* TODO: Cambiar estado a eliminado en caso de confirmar mensaje */
-function eliminar(cat_id){
+function eliminar(ID_evento){
     swal({
         title: "HelpDesk",
         text: "Esta seguro de Eliminar el registro?",
@@ -114,7 +117,7 @@ function eliminar(cat_id){
     },
     function(isConfirm) {
         if (isConfirm) {
-            $.post("../../controller/categoria.php?op=eliminar", {cat_id : cat_id}, function (data) {
+            $.post("../../controller/evento.php?op=eliminar", {ID_evento : ID_evento}, function (data) {
 
             }); 
 
@@ -134,7 +137,7 @@ function eliminar(cat_id){
 
 /* TODO: Limpiar Inputs */
 $(document).on("click","#btnnuevo", function(){
-    $('#ID_materia').val('');
+    $('#ID_evento').val('');
     $('#mdltitulo').html('Nuevo Registro');
     $('#usuario_form')[0].reset();
     /* TODO:Mostrar Modal */

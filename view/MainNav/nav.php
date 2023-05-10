@@ -11,7 +11,7 @@
                         </a>
                     </li>
                     <li class="blue-dirty">
-                        <a href="..\ListarEvento\">
+                        <a href="..\InscribirEvento\">
                             <span class="glyphicon glyphicon-send"></span>
                             <span class="lbl">Inscribir a Evento</span>
                         </a>
@@ -66,7 +66,7 @@
                         </a>
                     </li>
                     <li class="blue-dirty">
-                        <a href="..\ListarEvento\">
+                        <a href="..\InscribirEvento\">
                             <span class="glyphicon glyphicon-send"></span>
                             <span class="lbl">Inscribir a Evento</span>
                         </a>

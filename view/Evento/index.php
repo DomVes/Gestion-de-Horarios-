@@ -37,6 +37,7 @@
 				<table id="usuario_data" class="table table-bordered table-striped table-vcenter js-dataTable-full">
 					<thead>
 						<tr>
+							<th style="width: 10%;">Código</th>
 							<th style="width: 10%;">Fecha</th>
 							<th style="width: 10%;">Duracion</th>
 							<th style="width: 10%;">Objetivo</th>

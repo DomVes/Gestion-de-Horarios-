@@ -35,6 +35,13 @@ function guardaryeditar(e) {
 }
 
 $(document).ready(function () {
+  // Llenar combo usuarios
+  cargarSelect("../../controller/usuario.php?op=combo", "#docente_id");
+  // Llenar combo grupos
+  cargarSelect("../../controller/grupo.php?op=combo", "#id_grupo");
+  // Llenar combo Aulas
+  cargarSelect("../../controller/aula.php?op=combo", "#aula_id");
+
   /* TODO: Mostrar listado de registros */
   tabla = $("#usuario_data")
     .dataTable({
@@ -87,7 +94,11 @@ $(document).ready(function () {
     })
     .DataTable();
 });
-
+function cargarSelect(url, selector) {
+  $.post(url, function (data, status) {
+    $(selector).html(data);
+  });
+}
 /* TODO: Mostrar informacion segun ID en los inputs */
 function editar(ID_materia) {
   $("#mdltitulo").html("Editar Registro");
@@ -99,7 +110,10 @@ function editar(ID_materia) {
     function (data) {
       data = JSON.parse(data);
       $("#ID_materia").val(data.ID_materia);
+      $("#id_grupo").val(data.id_grupo);
       $("#nombre").val(data.nombre);
+      $("#aula_id").val(data.aula_id);
+      $("#docente_id").val(data.docente_id);
     }
   );
 
@@ -108,7 +122,7 @@ function editar(ID_materia) {
 }
 
 /* TODO: Cambiar estado a eliminado en caso de confirmar mensaje */
-function eliminar(cat_id) {
+function eliminar(ID_materia) {
   swal(
     {
       title: "Confirmar!",
@@ -123,8 +137,8 @@ function eliminar(cat_id) {
     function (isConfirm) {
       if (isConfirm) {
         $.post(
-          "../../controller/categoria.php?op=eliminar",
-          { cat_id: cat_id },
+          "../../controller/materia.php?op=eliminar",
+          { ID_materia: ID_materia },
           function (data) {}
         );
 
@@ -142,7 +156,6 @@ function eliminar(cat_id) {
     }
   );
 }
-
 /* TODO: Limpiar Inputs */
 $(document).on("click", "#btnnuevo", function () {
   $("#ID_materia").val("");

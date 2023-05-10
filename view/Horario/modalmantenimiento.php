@@ -9,30 +9,30 @@
             </div>
             <form method="post" id="usuario_form">
                 <div class="modal-body">
-                    <input type="hidden" id="cat_id" name="cat_id">
+                    <input type="hidden" id="ID_horario" name="ID_horario">
                     <div class="form-group">
-                        <label class="form-label" for="cat_nom">Aula</label>
-                        <input type="text" class="form-control" id="cat_nom" name="cat_nom" placeholder="Ingrese Nombre" required>
+                        <label class="form-label" for="ID_aula">Aula</label>
+                        <select type="select2" class="form-control" id="ID_aula" name="ID_aula" placeholder="Seleccionar" required></select>
                     </div>
                     <div class="form-group">
-                        <label class="form-label" for="cat_nom">Materia</label>
-                        <input type="text" class="form-control" id="cat_nom" name="cat_nom" placeholder="Ingrese Nombre" required>
+                        <label class="form-label" for="ID_materia">Materia</label>
+                        <select type="select2" class="form-control" id="ID_materia" name="ID_materia" placeholder="Seleccionar" required></select>
                     </div>   
                     <div class="form-group">
-                        <label class="form-label" for="cat_nom">Grupo</label>
-                        <input type="text" class="form-control" id="cat_nom" name="cat_nom" placeholder="Ingrese Nombre" required>
-                    </div>                    
+                        <label class="form-label" for="ID_grupo">Grupo</label>
+                        <select type="select2" class="form-control" id="ID_grupo" name="ID_grupo" placeholder="Seleccionar" required></select>
+                    </div>                     
                     <div class="form-group">
-                        <label class="form-label" for="cat_nom">Hora inicio</label>
-                        <input type="text" class="form-control" id="cat_nom" name="cat_nom" placeholder="Ingrese Nombre" required>
-                    </div>
+                        <label class="form-label" for="hora_inicio">Hora Inicio</label>
+                        <input type="time" class="form-control" id="hora_inicio" name="hora_inicio" placeholder="Ingrese la duración" required>
+                    </div>                   
                     <div class="form-group">
-                        <label class="form-label" for="cat_nom">Hora fin</label>
-                        <input type="text" class="form-control" id="cat_nom" name="cat_nom" placeholder="Ingrese Nombre" required>
-                    </div>
+                        <label class="form-label" for="hora_fin">Hora Fin</label>
+                        <input type="time" class="form-control" id="hora_fin" name="hora_fin" placeholder="Ingrese la duración" required>
+                    </div> 
                     <div class="form-group">
-                        <label class="form-label" for="cat_nom">Dia de la semana</label>
-                        <input type="text" class="form-control" id="cat_nom" name="cat_nom" placeholder="Ingrese Nombre" required>
+                        <label class="form-label" for="dia_de_la_semana">Dia de la semana</label>
+                        <input type="text" class="form-control" id="dia_de_la_semana" name="dia_de_la_semana" placeholder="Ingrese la fecha" required>
                     </div>                                     
                 </div>
                 <div class="modal-footer">

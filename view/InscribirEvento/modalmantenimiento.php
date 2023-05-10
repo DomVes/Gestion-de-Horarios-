@@ -9,20 +9,15 @@
             </div>
             <form method="post" id="usuario_form">
                 <div class="modal-body">
-                    <input type="hidden" id="ID_aula" name="ID_aula">
-                    
+                <input type="hidden" id="ID_inscrip" name="ID_inscrip">
                     <div class="form-group">
-                        <label class="form-label" for="bloque">Bloque</label>
-                        <input type="text" class="form-control" id="bloque" name="bloque" placeholder="Ingrese Bloque" required>
-                    </div>
+                        <label class="form-label" for="evento_id">Evento</label>
+                        <select type="select2" class="form-control" id="evento_id" name="evento_id" placeholder="Seleccionar" required></select>
+                    </div>   
                     <div class="form-group">
-                        <label class="form-label" for="numero_de_aula">Número</label>
-                        <input type="number" class="form-control" id="numero_de_aula" name="numero_de_aula" placeholder="Ingrese Numero de Aula" required>
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label" for="descripcion">Descripción</label>
-                        <input type="text" class="form-control" id="descripcion" name="descripcion" placeholder="Ingrese Descripcion de Aula" required>
-                    </div>                    
+                        <label class="form-label" for="grupo_id">Grupo</label>
+                        <select type="select2" class="form-control" id="grupo_id" name="grupo_id" placeholder="Seleccionar" required></select>
+                    </div>                                                                                                                              
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-rounded btn-default" data-dismiss="modal">Cerrar</button>

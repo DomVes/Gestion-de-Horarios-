@@ -37,10 +37,10 @@
 				<table id="usuario_data" class="table table-bordered table-striped table-vcenter js-dataTable-full">
 					<thead>
 						<tr>
-							<th style="width: 10%;">Fecha</th>
-							<th style="width: 10%;">Duracion</th>
-							<th style="width: 10%;">Objetivo</th>
-							<th class="text-center" style="width: 5%;">Inscrito</th>							
+							<th style="width: 10%;">Código de evento</th>
+							<th style="width: 10%;">Grupo</th>
+							<th class="text-center" style="width: 5%;">Editar</th>
+							<th class="text-center" style="width: 5%;">Eliminar</th>						
 						</tr>
 					</thead>
 					<tbody>
@@ -54,7 +54,7 @@
 
 	<?php require_once("modalmantenimiento.php");?>
 	<?php require_once("../MainJs/js.php");?>	
-	<script type="text/javascript" src="mntlistarevento.js"></script>
+	<script type="text/javascript" src="mntinscripevento.js"></script>
 
 </body>
 </html>

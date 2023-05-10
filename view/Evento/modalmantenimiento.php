@@ -9,23 +9,23 @@
             </div>
             <form method="post" id="usuario_form">
                 <div class="modal-body">
-                    <input type="hidden" id="cat_id" name="cat_id">
+                    <input type="hidden" id="ID_evento" name="ID_evento">
 
                     <div class="form-group">
-                        <label class="form-label" for="cat_nom">Código</label>
-                        <input type="text" class="form-control" id="cat_nom" name="cat_nom" placeholder="Ingrese Nombre" required>
+                        <label class="form-label" for="codigo">Código</label>
+                        <input type="text" class="form-control" id="codigo" name="codigo" placeholder="Ingrese el código" required>
                     </div>
                     <div class="form-group">
-                        <label class="form-label" for="cat_nom">Fecha</label>
-                        <input type="text" class="form-control" id="cat_nom" name="cat_nom" placeholder="Ingrese Nombre" required>
+                        <label class="form-label" for="fecha">Fecha</label>
+                        <input type="date" class="form-control" id="fecha" name="fecha" placeholder="Ingrese la fecha" required>
                     </div>
                     <div class="form-group">
-                        <label class="form-label" for="cat_nom">Duración</label>
-                        <input type="text" class="form-control" id="cat_nom" name="cat_nom" placeholder="Ingrese Nombre" required>
+                        <label class="form-label" for="duracion">Duración</label>
+                        <input type="time" class="form-control" id="duracion" name="duracion" placeholder="Ingrese la duración" required>
                     </div> 
                     <div class="form-group">
-                        <label class="form-label" for="cat_nom">Objetivo</label>
-                        <input type="text" class="form-control" id="cat_nom" name="cat_nom" placeholder="Ingrese Nombre" required>
+                        <label class="form-label" for="objetivo">Objetivo</label>
+                        <input type="text" class="form-control" id="objetivo" name="objetivo" placeholder="Ingrese el objetivo" required>
                     </div>                    
                 </div>
                 <div class="modal-footer">

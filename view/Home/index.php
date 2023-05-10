@@ -22,34 +22,34 @@
 			<div class="row">
 				<div class="col-xl-12">
 					<div class="row">
-						<div class="col-sm-3">
+						<div class="col-sm-6">
 	                        <article class="statistic-box green">
 	                            <div>
-	                                <div class="number" id="lbltotal"></div>
+	                                <div class="number" id="lbltotaleventos"></div>
 	                                <div class="caption"><div>Total de Eventos</div></div>
 	                            </div>
 	                        </article>
 	                    </div>
-						<div class="col-sm-3">
+						<div class="col-sm-6">
 	                        <article class="statistic-box yellow">
 	                            <div>
-	                                <div class="number" id="lbltotalabierto"></div>
+	                                <div class="number" id="lbltotalaulas"></div>
 	                                <div class="caption"><div>Total de Aulas</div></div>
 	                            </div>
 	                        </article>
 	                    </div>
-						<div class="col-sm-3">
+						<div class="col-sm-6">
 	                        <article class="statistic-box red">
 	                            <div>
-	                                <div class="number" id="lbltotalcerrado"></div>
+	                                <div class="number" id="lbltotalmaterias"></div>
 	                                <div class="caption"><div>Total de Materias</div></div>
 	                            </div>
 	                        </article>
 	                    </div>
-						<div class="col-sm-3">
+						<div class="col-sm-6">
 	                        <article class="statistic-box" style="background-color: cornflowerblue;">
 	                            <div>
-	                                <div class="number" id="lbltotalcerrado"></div>
+	                                <div class="number" id="lbltotaldocentes"></div>
 	                                <div class="caption"><div>Total de Docentes</div></div>
 	                            </div>
 	                        </article>
@@ -57,15 +57,7 @@
 					</div>
 				</div>
 			</div>
-
-			<section class="card">
-				<header class="card-header">
-					Futuro Grafico Estadístico
-				</header>
-				<div class="card-block">
-					<div id="divgrafico" style="height: 250px;"></div>
-				</div>
-			</section>
+			
 
 		</div>
 	</div>

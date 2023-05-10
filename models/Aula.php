@@ -10,7 +10,14 @@
             $sql->execute();
             return $resultado=$sql->fetchAll();
         }
-
+        function get_total_aulas(){
+            $conectar= parent::conexion();
+            parent::set_names();
+            $sql="SELECT COUNT(*) as TOTAL FROM aulas";
+            $sql=$conectar->prepare($sql);
+            $sql->execute();
+            return $resultado=$sql->fetchAll();
+        }
         /* TODO:Insert Registro*/
         public function insert_aula($bloque,$numero,$descripcion){
             $conectar= parent::conexion();

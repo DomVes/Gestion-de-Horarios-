@@ -5,18 +5,13 @@ function init() {
     guardaryeditar(e);
   });
 }
-function cargarSelect(url, selector) {
-  $.post(url, function (data, status) {
-    $(selector).html(data);
-  });
-}
 
 /* TODO: Guardar datos de los input */
 function guardaryeditar(e) {
   e.preventDefault();
   var formData = new FormData($("#usuario_form")[0]);
   $.ajax({
-    url: "../../controller/horarios.php?op=guardaryeditar",
+    url: "../../controller/inscrip_evento.php?op=guardaryeditar",
     type: "POST",
     data: formData,
     contentType: false,
@@ -30,8 +25,8 @@ function guardaryeditar(e) {
 
       /* TODO:Mensaje de Confirmacion */
       swal({
-        title: "HelpDesk!",
-        text: "Completado.",
+        title: "Correcto!",
+        text: "Inscripción Correcta.",
         type: "success",
         confirmButtonClass: "btn-success",
       });
@@ -40,12 +35,11 @@ function guardaryeditar(e) {
 }
 
 $(document).ready(function () {
-  // Llenar combo aulas
-  cargarSelect("../../controller/aula.php?op=combo", "#ID_aula");
-  // Llenar combo materias
-  cargarSelect("../../controller/materia.php?op=combo", "#ID_materia");
+  // Llenar combo evento
+  cargarSelect("../../controller/evento.php?op=combo", "#evento_id");
   // Llenar combo grupos
-  cargarSelect("../../controller/grupo.php?op=combo", "#ID_grupo");
+  cargarSelect("../../controller/grupo.php?op=combo", "#grupo_id");
+
   /* TODO: Mostrar listado de registros */
   tabla = $("#usuario_data")
     .dataTable({
@@ -57,7 +51,7 @@ $(document).ready(function () {
       colReorder: true,
       buttons: [],
       ajax: {
-        url: "../../controller/horarios.php?op=listar",
+        url: "../../controller/inscrip_evento.php?op=listar",
         type: "post",
         dataType: "json",
         error: function (e) {
@@ -67,7 +61,7 @@ $(document).ready(function () {
       bDestroy: true,
       responsive: true,
       bInfo: true,
-      iDisplayLength: 10,
+      iDisplayLength: 5,
       autoWidth: false,
       language: {
         sProcessing: "Procesando...",
@@ -98,18 +92,23 @@ $(document).ready(function () {
     })
     .DataTable();
 });
-
+function cargarSelect(url, selector) {
+  $.post(url, function (data, status) {
+    $(selector).html(data);
+  });
+}
 /* TODO: Mostrar informacion segun ID en los inputs */
-function editar(ID_horario) {
+function editar(ID_inscrip) {
   $("#mdltitulo").html("Editar Registro");
+
   /* TODO: Mostrar Informacion en los inputs */
   $.post(
-    "../../controller/horarios.php?op=mostrar",
-    { ID_horario: ID_horario },
+    "../../controller/inscrip_evento.php?op=mostrar",
+    { ID_inscrip: ID_inscrip },
     function (data) {
       data = JSON.parse(data);
-      $("#ID_horario").val(data.ID_horario);
-      $("#nombre").val(data.nombre);
+      $("#evento_id").val(data.evento_id);
+      $("#grupo_id").val(data.grupo_id);
     }
   );
 
@@ -118,10 +117,10 @@ function editar(ID_horario) {
 }
 
 /* TODO: Cambiar estado a eliminado en caso de confirmar mensaje */
-function eliminar(ID_horario) {
+function eliminar(ID_inscrip) {
   swal(
     {
-      title: "HelpDesk",
+      title: "Confirmar!",
       text: "Esta seguro de Eliminar el registro?",
       type: "error",
       showCancelButton: true,
@@ -133,8 +132,8 @@ function eliminar(ID_horario) {
     function (isConfirm) {
       if (isConfirm) {
         $.post(
-          "../../controller/horarios.php?op=eliminar",
-          { ID_horario: ID_horario },
+          "../../controller/inscrip_evento.php?op=eliminar",
+          { ID_inscrip: ID_inscrip },
           function (data) {}
         );
 
@@ -143,7 +142,7 @@ function eliminar(ID_horario) {
 
         /* TODO: Mensaje de Confirmacion */
         swal({
-          title: "HelpDesk!",
+          title: "Listo!",
           text: "Registro Eliminado.",
           type: "success",
           confirmButtonClass: "btn-success",
@@ -152,10 +151,8 @@ function eliminar(ID_horario) {
     }
   );
 }
-
 /* TODO: Limpiar Inputs */
 $(document).on("click", "#btnnuevo", function () {
-  $("#ID_materia").val("");
   $("#mdltitulo").html("Nuevo Registro");
   $("#usuario_form")[0].reset();
   /* TODO:Mostrar Modal */

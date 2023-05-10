@@ -26,7 +26,7 @@
                 $sub_array[] = $row["usu_nom"];
                 $sub_array[] = $row["usu_ape"];
                 $sub_array[] = $row["usu_correo"];
-                $sub_array[] = $row["usu_pass"];
+
 
                 if ($row["rol_id"]=="1"){
                     $sub_array[] = '<span class="label label-pill label-success">Estudiante</span>';
@@ -70,9 +70,9 @@
             }
             break;
 
-        /* TODO: Cantidad de Ticket por Usuario en formato JSON */
+        /* TODO: Cantidad de Usuario en formato JSON */
         case "total";
-            $datos=$usuario->get_usuario_total_x_id($_POST["usu_id"]);  
+            $datos=$usuario->get_total_usuarios();  
             if(is_array($datos)==true and count($datos)>0){
                 foreach($datos as $row)
                 {
@@ -81,37 +81,6 @@
                 echo json_encode($output);
             }
             break;
-
-        /* TODO: Cantidad de Ticket Abiertos por Usuario en formato JSON */
-        case "totalabierto";
-            $datos=$usuario->get_usuario_totalabierto_x_id($_POST["usu_id"]);  
-            if(is_array($datos)==true and count($datos)>0){
-                foreach($datos as $row)
-                {
-                    $output["TOTAL"] = $row["TOTAL"];
-                }
-                echo json_encode($output);
-            }
-            break;
-
-        /* TODO: Cantidad de Ticket Cerrados por Usuario en formato JSON */
-        case "totalcerrado";
-            $datos=$usuario->get_usuario_totalcerrado_x_id($_POST["usu_id"]);  
-            if(is_array($datos)==true and count($datos)>0){
-                foreach($datos as $row)
-                {
-                    $output["TOTAL"] = $row["TOTAL"];
-                }
-                echo json_encode($output);
-            }
-            break;
-
-        /* TODO: Formato Json segun cantidad de ticket por categoria por usuario */
-        case "grafico";
-            $datos=$usuario->get_usuario_grafico($_POST["usu_id"]);  
-            echo json_encode($datos);
-            break;
-
         /* TODO: Formato para llenar combo en formato HTML */
         case "combo";
             $datos = $usuario->get_usuario_x_rol();

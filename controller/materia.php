@@ -11,10 +11,10 @@
         case "guardaryeditar":
             /* TODO:Actualizar si el campo cat_id tiene informacion */
             if(empty($_POST["ID_materia"])){       
-                $materia->insert_materia($_POST["cat_nom"]);     
+                $materia->insert_materia($_POST["id_grupo"],$_POST["nombre"],$_POST["docente_id"],$_POST["aula_id"]);     
             }
             else {
-                $materia->update_materia($_POST["cat_id"],$_POST["cat_nom"]);
+                $materia->update_materia($_POST["ID_materia"],$_POST["id_grupo"], $_POST["nombre"],$_POST["docente_id"],$_POST["aula_id"]);
             }
             break;
 
@@ -25,9 +25,10 @@
             foreach($datos as $row){
                 $sub_array = array();
                 $sub_array[] = $row["nombre"];
-                $sub_array[] = $row["docente_nom"];
-                $sub_array[] = $row["aula_id"];
-                $sub_array[] = $row["duracion_en_horas"];
+                $sub_array[] = $row["codigo"];
+                $sub_array[] = $row["usu_nom"];
+                $sub_array[] = $row["bloque"];
+                $sub_array[] = $row["numero_de_aula"];
                 $sub_array[] = '<button type="button" onClick="editar('.$row["ID_materia"].');"  id="'.$row["ID_materia"].'" class="btn btn-inline btn-warning btn-sm ladda-button"><i class="fa fa-edit"></i></button>';
                 $sub_array[] = '<button type="button" onClick="eliminar('.$row["ID_materia"].');"  id="'.$row["ID_materia"].'" class="btn btn-inline btn-danger btn-sm ladda-button"><i class="fa fa-trash"></i></button>';
                 $data[] = $sub_array;
@@ -53,14 +54,26 @@
                 foreach($datos as $row)
                 {
                     $output["ID_materia"] = $row["ID_materia"];
-                    $output["nombre"] = $row["nombre"];
-                    $output["docente_nom"] = $row["docente_nom"];
-                    $output["aula_nom"] = $row["aula_nom"];                    
+                    $output["id_grupo"] = $row["id_grupo"]; 
+                    $output["aula_id"] = $row["aula_id"];  
+                    $output["nombre"] = $row["nombre"]; 
+                    $output["docente_id"] = $row["docente_id"];                                       
+                                     
                 }
                 echo json_encode($output);
             }
             break;
-
+        /* TODO: Cantidad de materias en formato JSON */
+        case "total";
+        $datos=$materia->get_total_materias();  
+        if(is_array($datos)==true and count($datos)>0){
+            foreach($datos as $row)
+            {
+                $output["TOTAL"] = $row["TOTAL"];
+            }
+            echo json_encode($output);
+        }
+         break;
         /* TODO: Formato para llenar combo en formato HTML */
         case "combo":
             $datos = $materia->get_materia();
@@ -68,7 +81,7 @@
             if(is_array($datos)==true and count($datos)>0){
                 foreach($datos as $row)
                 {
-                    $html.= "<option value='".$row['docente_id']."'>".$row['docente_nombre']."</option>";
+                    $html.= "<option value='".$row['ID_materia']."'>".$row['nombre']."</option>";
                 }
                 echo $html;
             }

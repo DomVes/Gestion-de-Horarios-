@@ -39,7 +39,19 @@
         public function insert_usuario($usu_nom,$usu_ape,$usu_correo,$usu_pass,$rol_id,$usu_telf){
             $conectar= parent::conexion();
             parent::set_names();
-            $sql="INSERT INTO tm_usuario (usu_id, usu_nom, usu_ape, usu_correo, usu_pass, rol_id, usu_telf, fech_crea, fech_modi, fech_elim, est) VALUES (NULL,?,?,?,MD5(?),?,?,now(), NULL, NULL, '1');";
+            $sql="INSERT INTO tm_usuario (
+                usu_id, 
+                usu_nom, 
+                usu_ape,
+                usu_correo, 
+                usu_pass, 
+                rol_id, 
+                usu_telf,
+                fech_crea, 
+                fech_modi, 
+                fech_elim, 
+                est) 
+                VALUES (NULL,?,?,?,MD5(?),?,?,now(), NULL, NULL, '1');";
             $sql=$conectar->prepare($sql);
             $sql->bindValue(1, $usu_nom);
             $sql->bindValue(2, $usu_ape);
@@ -119,57 +131,14 @@
         }
 
         /* TODO: Total de registros segun usu_id */
-        public function get_usuario_total_x_id($usu_id){
+        public function get_total_usuarios(){
             $conectar= parent::conexion();
             parent::set_names();
-            $sql="SELECT COUNT(*) as TOTAL FROM tm_ticket where usu_id = ?";
+            $sql="SELECT COUNT(*) as TOTAL FROM tm_usuario WHERE rol_id = 2";
             $sql=$conectar->prepare($sql);
-            $sql->bindValue(1, $usu_id);
             $sql->execute();
             return $resultado=$sql->fetchAll();
         }
-
-        /* TODO: Total de Tickets Abiertos por usu_id */
-        public function get_usuario_totalabierto_x_id($usu_id){
-            $conectar= parent::conexion();
-            parent::set_names();
-            $sql="SELECT COUNT(*) as TOTAL FROM tm_ticket where usu_id = ? and tick_estado='Abierto'";
-            $sql=$conectar->prepare($sql);
-            $sql->bindValue(1, $usu_id);
-            $sql->execute();
-            return $resultado=$sql->fetchAll();
-        }
-
-        /* TODO: Total de Tickets Cerrado por usu_id */
-        public function get_usuario_totalcerrado_x_id($usu_id){
-            $conectar= parent::conexion();
-            parent::set_names();
-            $sql="SELECT COUNT(*) as TOTAL FROM tm_ticket where usu_id = ? and tick_estado='Cerrado'";
-            $sql=$conectar->prepare($sql);
-            $sql->bindValue(1, $usu_id);
-            $sql->execute();
-            return $resultado=$sql->fetchAll();
-        }
-
-        /* TODO: Total de Tickets por categoria segun usuario */
-        public function get_usuario_grafico($usu_id){
-            $conectar= parent::conexion();
-            parent::set_names();
-            $sql="SELECT tm_categoria.cat_nom as nom,COUNT(*) AS total
-                FROM   tm_ticket  JOIN  
-                    tm_categoria ON tm_ticket.cat_id = tm_categoria.cat_id  
-                WHERE    
-                tm_ticket.est = 1
-                and tm_ticket.usu_id = ?
-                GROUP BY 
-                tm_categoria.cat_nom 
-                ORDER BY total DESC";
-            $sql=$conectar->prepare($sql);
-            $sql->bindValue(1, $usu_id);
-            $sql->execute();
-            return $resultado=$sql->fetchAll();
-        }
-
         /* TODO: Actualizar contraseña del usuario */
         public function update_usuario_pass($usu_id,$usu_pass){
             $conectar= parent::conexion();

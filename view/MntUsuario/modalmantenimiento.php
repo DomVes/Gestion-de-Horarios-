@@ -10,27 +10,22 @@
             <form method="post" id="usuario_form">
                 <div class="modal-body">
                     <input type="hidden" id="usu_id" name="usu_id">
-
                     <div class="form-group">
                         <label class="form-label" for="usu_nom">Nombre</label>
                         <input type="text" class="form-control" id="usu_nom" name="usu_nom" placeholder="Ingrese Nombre" required>
                     </div>
-
                     <div class="form-group">
                         <label class="form-label" for="usu_ape">Apellido</label>
                         <input type="text" class="form-control" id="usu_ape" name="usu_ape" placeholder="Ingrese Apellido" required>
                     </div>
-
                     <div class="form-group">
                         <label class="form-label" for="usu_correo">Correo Electronico</label>
                         <input type="email" class="form-control" id="usu_correo" name="usu_correo" placeholder="test@test.com" required>
                     </div>
-
                     <div class="form-group">
                         <label class="form-label" for="usu_pass">Contraseña</label>
                         <input type="text" class="form-control" id="usu_pass" name="usu_pass" placeholder="************" required>
                     </div>
-
                     <div class="form-group">
                         <label class="form-label" for="rol_id">Rol</label>
                         <select class="select2" id="rol_id" name="rol_id">
@@ -38,7 +33,6 @@
                             <option value="2">Docente</option>
                         </select>
                     </div>
-
                     <div class="form-group">
                         <label class="form-label" for="usu_telf">Telefono</label>
                         <input type="text" class="form-control" id="usu_telf" name="usu_telf" placeholder="Ingrese Telefono" required>

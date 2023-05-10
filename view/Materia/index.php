@@ -37,9 +37,11 @@
 				<table id="usuario_data" class="table table-bordered table-striped table-vcenter js-dataTable-full">
 					<thead>
 						<tr>
+							<th style="width: 10%;">Materia</th>
 							<th style="width: 10%;">Grupo</th>
 							<th style="width: 10%;">Docente</th>
-							<th style="width: 10%;">Aula</th>
+							<th style="width: 10%;">Bloque</th>
+							<th style="width: 10%;">Número de Aula</th>
 							<th class="text-center" style="width: 5%;">Editar</th>
 							<th class="text-center" style="width: 5%;">Eliminar</th>
 						</tr>
